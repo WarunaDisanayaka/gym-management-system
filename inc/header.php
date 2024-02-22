@@ -24,6 +24,8 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="service.php">Services</a></li>
 				<li class="nav-item"><a class="nav-link" href="pricing.php">Memebership</a></li>
+				<li class="nav-item"><a class="nav-link" href="doctors.php">Doctors</a></li>
+
 				<li class="nav-item dropdown">
 					
 					
