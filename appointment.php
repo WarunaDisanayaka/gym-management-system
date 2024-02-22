@@ -65,12 +65,12 @@
                         <form action="#" method="post">
                             <div class="form-group">
                                 <label for="datepicker">Select Date:</label>
-                                <input type="text" class="form-control" id="datepicker" placeholder="Select date"
+                                <input type="date" class="form-control" id="datepicker" placeholder="Select date"
                                     name="appointment_date" required>
                             </div>
                             <div class="form-group">
                                 <label for="timepicker">Select Time:</label>
-                                <input type="text" class="form-control" id="timepicker" placeholder="Select time"
+                                <input type="time" class="form-control" id="timepicker" placeholder="Select time"
                                     name="appointment_time" required>
                             </div>
                             <div class="form-group">
