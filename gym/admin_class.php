@@ -276,6 +276,22 @@ Class Action {
 		if($save)
 			return 1;
 	}
+
+	function save_doctor(){
+		extract($_POST);
+		$data = " name = '$name' ";
+		$data .= ", email = '$email' ";
+		$data .= ", contact = '$contact' ";
+		$data .= ", rate = '$rate' ";
+			if(empty($id)){
+				$save = $this->db->query("INSERT INTO trainers set $data");
+			}else{
+				$save = $this->db->query("UPDATE trainers set $data where id = $id");
+			}
+		if($save)
+			return 1;
+	}
+
 	function delete_trainer(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM trainers where id = ".$id);

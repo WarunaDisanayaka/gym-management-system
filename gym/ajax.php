@@ -70,6 +70,12 @@ if($action == "delete_package"){
 	if($delete)
 		echo $delete;
 }
+if($action == "save_doctor"){
+	$save = $crud->save_doctor();
+	if($save)
+		echo $save;
+}
+
 if($action == "save_trainer"){
 	$save = $crud->save_trainer();
 	if($save)
