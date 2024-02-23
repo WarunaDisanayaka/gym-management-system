@@ -26,7 +26,7 @@ class DataSource
 
     const PASSWORD = '';
 
-    const DATABASENAME = 'signup';
+    const DATABASENAME = 'gym_db';
 
     private $conn;
 
