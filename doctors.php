@@ -71,7 +71,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-md-2">
                         <!-- You can replace "fa-icon" with the relevant icon class from a library like Font Awesome -->
-                        <img src="images/team/team-8.jpeg" alt="" class="img-fluid w-100" style="max-height: 100%;">
+                        <img src="images/team/doctor.png" alt="" class="img-fluid w-100" style="max-height: 100%;">
                     </div>
                     <div class="col-md-10">
                         <div class="card-body team-wrap pl-4">
