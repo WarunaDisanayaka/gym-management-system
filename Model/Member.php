@@ -146,7 +146,7 @@ class Member
             session_start();
             $_SESSION["username"] = $memberRecord[0]["username"];
             session_write_close();
-            $url = "./index.html";
+            $url = "./index.php";
             header("Location: $url");
         } else if ($loginPassword == 0) {
             $loginStatus = "Invalid username or password.";
