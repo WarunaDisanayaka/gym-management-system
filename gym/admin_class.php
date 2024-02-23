@@ -255,6 +255,21 @@ Class Action {
 		if($save)
 			return 1;
 	}
+
+	function save_product(){
+		extract($_POST);
+		$data = " product = '$package' ";
+		$data .= ", description = '$description' ";
+		$data .= ", amount = '$amount' ";
+			if(empty($id)){
+				$save = $this->db->query("INSERT INTO products set $data");
+			}else{
+				$save = $this->db->query("UPDATE products set $data where id = $id");
+			}
+		if($save)
+			return 1;
+	}
+
 	function delete_package(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM packages where id = ".$id);

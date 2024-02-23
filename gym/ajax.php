@@ -65,6 +65,12 @@ if($action == "save_package"){
 		echo $save;
 }
 
+if($action == "save_product"){
+	$save = $crud->save_product();
+	if($save)
+		echo $save;
+}
+
 if($action == "delete_package"){
 	$delete = $crud->delete_package();
 	if($delete)
