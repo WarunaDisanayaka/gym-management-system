@@ -20,8 +20,8 @@
 				<a href="index.php?page=packages" class="nav-item nav-packages"><span class='icon-field'><i class="fa fa-list"></i></span> Packages</a>
 				<a href="index.php?page=trainer" class="nav-item nav-trainer"><span class='icon-field'><i class="fa fa-user"></i></span> Trainers</a>
 				<a href="index.php?page=doctors" class="nav-item nav-trainer"><span class='icon-field'><i class="fa fa-user-md"></i></span> Doctors</a>
-
 				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Users</a>
+				<a href="index.php?page=products" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-archive" aria-hidden="true"></i></span> Products</a>
 			<?php endif; ?>
 		</div>
 
