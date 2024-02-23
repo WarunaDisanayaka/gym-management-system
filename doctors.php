@@ -1,3 +1,8 @@
+<?php
+    include "config/db.php";
+    $result = $conn->query("SELECT * FROM doctors");
+
+?>
 <!doctype html>
 
 
@@ -65,27 +70,33 @@
 			</div>
 		</div>
         <div class="row">
-        <!-- Ishara Ravisara -->
-        <div class="col-lg-12">
-            <div class="card border-0 mb-4">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-md-2">
-                        <!-- You can replace "fa-icon" with the relevant icon class from a library like Font Awesome -->
-                        <img src="images/team/doctor.png" alt="" class="img-fluid w-100" style="max-height: 100%;">
-                    </div>
-                    <div class="col-md-10">
-                        <div class="card-body team-wrap pl-4">
-                            <h3 class="card-title text-color">Ishara Ravisara</h3>
-                            <p class="mb-5">Ishara Ravisara is a certified fitness expert with a decade of experience, specializing in strength training and nutrition. Committed to holistic fitness, they're dedicated to helping clients reach their goals and live healthier lives.</p>
-                            <div class="text-right">
-                                <button class="btn btn-primary">Book an Appointment</button>
+                <?php
+                // Loop through the result set and display each doctor
+                while ($row = $result->fetch_assoc()) {
+                ?>
+                    <div class="col-lg-12">
+                        <div class="card border-0 mb-4">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-md-2">
+                                    <!-- You can replace "fa-icon" with the relevant icon class from a library like Font Awesome -->
+                                    <img src="images/team/doctor.png" alt="" class="img-fluid w-100" style="max-height: 100%;">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body team-wrap pl-4">
+                                        <h3 class="card-title text-color"><?php echo $row['name']; ?></h3>
+                                        <p class="mb-5"><?php echo $row['description']; ?></p>
+                                        <div class="text-right">
+                                            <button class="btn btn-primary">Book an Appointment</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
-        </div>
-    </div>
 	</div>
 </section>
 <!-- Section Team End -->
