@@ -282,15 +282,17 @@ Class Action {
 		$data = " name = '$name' ";
 		$data .= ", email = '$email' ";
 		$data .= ", contact = '$contact' ";
-		$data .= ", rate = '$rate' ";
-			if(empty($id)){
-				$save = $this->db->query("INSERT INTO trainers set $data");
-			}else{
-				$save = $this->db->query("UPDATE trainers set $data where id = $id");
-			}
-		if($save)
+		$data .= ", description = '$description' "; // Adding description field
+		if(empty($id)){
+			$save = $this->db->query("INSERT INTO doctors SET $data");
+		} else {
+			$save = $this->db->query("UPDATE doctors SET $data WHERE id = $id");
+		}
+		if($save) {
 			return 1;
+		}
 	}
+	
 
 	function delete_trainer(){
 		extract($_POST);

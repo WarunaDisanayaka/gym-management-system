@@ -26,8 +26,8 @@
 								<input type="text" class="form-control" name="contact">
 							</div>
 							<div class="form-group">
-								<label class="control-label">Rate</label>
-								<input type="number" class="form-control text-right" name="rate">
+								<label class="control-label">Description</label>
+								<input type="text" class="form-control text-right" name="description">
 							</div>
 					</div>
 							
@@ -62,7 +62,7 @@
 							<tbody>
 								<?php 
 								$i = 1;
-								$trainer = $conn->query("SELECT * FROM trainers order by id asc");
+								$trainer = $conn->query("SELECT * FROM doctors order by id asc");
 								while($row=$trainer->fetch_assoc()):
 								?>
 								<tr>
@@ -71,11 +71,11 @@
 										<p><i class="fa fa-user"></i> <b><?php echo $row['name'] ?></b></p>
 										<p><small><i class="fa fa-at"></i> <b><?php echo $row['email'] ?></b></small></p>
 										<p><small><i class="fa fa-phone-square-alt"></i> <b><?php echo $row['contact'] ?></b></small></p>
-										<p><small><i class="fa fa-money-bill"></i> <b><?php echo number_format($row['rate'],2) ?></b></small></p>
+										<p><small><i class="fa fa-money-bill"></i> <b><?php echo ($row['description']) ?></b></small></p>
 										
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_trainer" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>" data-contact="<?php echo $row['contact'] ?>" data-rate="<?php echo $row['rate'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-primary edit_trainer" type="button" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" data-email="<?php echo $row['email'] ?>" data-contact="<?php echo $row['contact'] ?>" data-rate="<?php echo $row['description'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_trainer" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>
@@ -141,7 +141,7 @@
 		cat.find("[name='name']").val($(this).attr('data-name'))
 		cat.find("[name='email']").val($(this).attr('data-email'))
 		cat.find("[name='contact']").val($(this).attr('data-contact'))
-		cat.find("[name='rate']").val($(this).attr('data-rate'))
+		cat.find("[name='description']").val($(this).attr('data-rate'))
 		end_load()
 	})
 	$('.delete_trainer').click(function(){
