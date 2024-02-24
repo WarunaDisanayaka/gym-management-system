@@ -73,7 +73,7 @@
                                  <p><?php echo $row['product_category']; ?></p>
                               </a>
                               <h6 class="mb-3">Rs <?php echo $row['amount']; ?></h6>
-                              <a href="#" class="btn btn-primary">Buy Now</a>
+                              <a href="payment.php?product_name=<?php echo urlencode($row['product']); ?>&product_price=<?php echo $row['amount']; ?>" class="btn btn-primary">Buy Now</a>
                            </div>
                         </div>
                      </div>
