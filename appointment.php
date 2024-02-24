@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
   <link rel="stylesheet" href="css/style.css">
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </head>
 <body>
 
@@ -35,7 +38,53 @@
 	include "inc/header.php";
 ?>
 
+<?php
+    include "config/db.php";
 
+     session_start();
+
+     // Check if the user is logged in
+     if (!isset($_SESSION["id"])) {
+         // Redirect to the login page if not logged in
+         header("Location: login.php");
+         exit();
+     }
+ 
+     // Retrieve the doctor's name from the URL
+     $doctorName = isset($_GET['doctor']) ? urldecode($_GET['doctor']) : '';
+
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      // Validate and sanitize input data
+      $appointmentDate = $_POST["appointment_date"];
+      $appointmentTime = $_POST["appointment_time"];
+      $phone = $_POST["phone"];
+  
+      // Insert the appointment into the database
+      $memberId = $_SESSION["id"]; // Assuming you store the member ID in the session
+  
+      // Prepare and execute the SQL query
+      $sql = "INSERT INTO appointments (doctor_name, appointment_date, appointment_time, phone, member_id)
+              VALUES ('$doctorName', '$appointmentDate', '$appointmentTime', '$phone', '$memberId')";
+  
+      if ($conn->query($sql) === TRUE) {
+        echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Appointment Booked',
+            text: 'Appointment booked successfully!',
+        }).then(() => {
+            // Redirect to the index page
+            window.location.href = 'index.php';
+        });
+     </script>";
+      } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+  
+      // Close the database connection
+      $conn->close();
+  }
+?>
 
 <div class="main-wrapper ">
 <section class="page-title bg-2">
@@ -191,3 +240,5 @@
    </body>
 
    </html>
+
+   

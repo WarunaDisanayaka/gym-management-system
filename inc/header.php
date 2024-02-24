@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Function to check if the user is logged in
+function isLoggedIn() {
+    return isset($_SESSION["id"]);
+}
+
+?>
 <!-- Header Start -->
 <nav class="navbar navbar-expand-lg navigation fixed-top" id="navbar">
 	<div class="container-fluid">
@@ -34,8 +43,13 @@
 					
 				</li>
 				<li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="login.php">login</a></li>
-			</ul>
+				<li class="nav-item">
+                    <?php if (isLoggedIn()) : ?>
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    <?php else : ?>
+                        <a class="nav-link" href="login.php">Login</a>
+                    <?php endif; ?>
+                </li>			</ul>
 			<div class="my-md-0 ml-lg-4 mt-4 mt-lg-0 ml-auto text-lg-right mb-3 mb-lg-0">
 				<a href="tel:+23-345-67890">
 					<h3 class="text-color mb-0"><i class="ti-mobile mr-2"></i>0716846739</h3>
