@@ -76,6 +76,13 @@ if($action == "delete_package"){
 	if($delete)
 		echo $delete;
 }
+
+if($action == "delete_product"){
+	$delete = $crud->delete_product();
+	if($delete)
+		echo $delete;
+}
+
 if($action == "save_doctor"){
 	$save = $crud->save_doctor();
 	if($save)
