@@ -102,7 +102,7 @@
                            </ul>
                            <!-- Assuming you have a 'description' column in your 'packages' table -->
                            <p><?php echo $row['description']; ?></p>
-                           <a href="#" class="btn btn-solid-border text-white">Buy Now</a>
+                           <a href="membership_payment.php?package=<?php echo urlencode($row['package']); ?>&amount=<?php echo urlencode($row['amount']); ?>" class="btn btn-solid-border text-white">Buy Now</a>
                         </div>
                      </div>
                   </div>
