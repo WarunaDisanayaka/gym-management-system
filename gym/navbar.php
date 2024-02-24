@@ -22,6 +22,7 @@
 				<a href="index.php?page=doctors" class="nav-item nav-trainer"><span class='icon-field'><i class="fa fa-user-md"></i></span> Doctors</a>
 				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Users</a>
 				<a href="index.php?page=products" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-archive" aria-hidden="true"></i></span> Products</a>
+				<a href="index.php?page=classes" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-book" aria-hidden="true"></i></span> Classes</a>
 			<?php endif; ?>
 		</div>
 
