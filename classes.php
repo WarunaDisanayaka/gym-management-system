@@ -1,3 +1,7 @@
+<?php
+    include "config/db.php";
+    $result = $conn->query("SELECT * FROM classes"); // Assuming your table name is 'classes'
+?>
 <!doctype html>
 
 <!--
@@ -66,96 +70,41 @@
 
 <!-- Section pricing start -->
 <section class="section pricing bg-gray">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-8 text-center">
-				<div class="section-title">
-					<div class="divider mb-3"></div>
-					<h2>Classes Available</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-				<div class="card rounded-0 px-4 py-5 bg-4">
-					<div class="position-relative">
-						<h4 class="card-title text-white text-capitalize font-weight-normal font-secondary">Kids and teen classess</h4>
-						<h3 class="text-lg text-white font-secondary position-relative  mt-2"><sup class="text-sm position-absolute">Rs</sup>2500   <sub>per month</sub></h3>
-
-	 					<div class="card-body mt-2">
-							<ul class="list-unstyled lh-35 mb-4">
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Training overview</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Foundation Training</li>
-								<li class="text-white-50"><i class="ti-close mr-3"></i>Begineers Classes</li>
-								<li class="text-white-50"><i class="ti-close mr-3"></i>Olympic weighlifting</li>
-								<li class="text-white-50"><i class="ti-close mr-3"></i>Personal Training</li>
-							</ul>
-							<a href="#" class="btn btn-solid-border text-white">Buy Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-				<div class="card px-4 py-5  rounded-0 bg-4">
-					<div class="position-relative">
-                        <h4 class="card-title text-white text-capitalize font-weight-normal font-secondary">Cardiovascular classess</h4>
-						<h3 class="text-lg font-secondary position-relative mt-2 text-white "><sup class="text-sm position-absolute">Rs</sup>5000 <sub>per month</sub></h3>
-
-	 					<div class="card-body mt-2">
-							<ul class="list-unstyled lh-35 mb-4">
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Training overview</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Foundation Training</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Begineers Classes</li>
-								<li class="text-white-50"><i class="ti-close mr-3"></i>Olympic weighlifting</li>
-								<li class="text-white-50"><i class="ti-close mr-3"></i>Personal Training</li>
-							</ul>
-							<a href="#" class="btn btn-main">Buy Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-				<div class="card rounded-0 px-4 py-5 bg-4">
-					<div class="position-relative">
-						<h4 class="card-title text-capitalize font-weight-normal font-secondary text-white ">Strength and conditioning</h4>
-						<h3 class="text-lg text-white font-secondary position-relative mt-2"><sup class="text-sm position-absolute">Rs</sup>10000 <sub>per month</sub></h3>
-
-	 					<div class="card-body mt-2">
-							<ul class="list-unstyled lh-35 mb-4">
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Training overview</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Foundation Training</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Begineers Classes</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Olympic weighlifting</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Personal Training</li>
-							</ul>
-							<a href="#" class="btn btn-solid-border text-white">Buy Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-				<div class="card rounded-0 px-4 py-5 bg-4">
-					<div class="position-relative">
-						<h4 class="card-title text-capitalize font-weight-normal font-secondary text-white ">Group fitness</h4>
-						<h3 class="text-lg text-white font-secondary position-relative mt-2"><sup class="text-sm position-absolute">Rs</sup>10000 <sub>per month</sub></h3>
-
-	 					<div class="card-body mt-2">
-							<ul class="list-unstyled lh-35 mb-4">
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Training overview</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Foundation Training</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Begineers Classes</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Olympic weighlifting</li>
-								<li class="text-white"><i class="ti-check mr-3 text-color "></i>Personal Training</li>
-							</ul>
-							<a href="#" class="btn btn-solid-border text-white">Buy Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-lg-8 text-center">
+                  <div class="section-title">
+                     <div class="divider mb-3"></div>
+                     <h2>Classes Available</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row justify-content-center">
+               <?php
+               // Loop through the result set and display each class
+               while ($row = $result->fetch_assoc()) {
+               ?>
+                  <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                     <div class="card rounded-0 px-4 py-5 bg-4">
+                        <div class="position-relative">
+                           <!-- Assuming you have a 'class_name' column in your 'classes' table -->
+                           <h4 class="card-title text-white text-capitalize font-weight-normal font-secondary"><?php echo $row['name']; ?></h4>
+                           <!-- Assuming you have a 'amount' column in your 'classes' table -->
+                           <h3 class="text-lg text-white font-secondary position-relative  mt-2"><?php echo $row['time_range']; ?></h3>
+                           <div class="card-body mt-2">
+                              <!-- Assuming you have a 'description' column in your 'classes' table -->
+                              <p class="text-white"><?php echo $row['description']; ?></p>
+                              <a href="#" class="btn btn-solid-border text-white">Book Now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               <?php
+               }
+               ?>
+            </div>
+         </div>
+      </section>
 <!-- Section pricing End -->
 
 <!-- footer Start -->
