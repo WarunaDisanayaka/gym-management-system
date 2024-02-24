@@ -23,6 +23,11 @@
 				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Users</a>
 				<a href="index.php?page=products" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-archive" aria-hidden="true"></i></span> Products</a>
 				<a href="index.php?page=classes" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-book" aria-hidden="true"></i></span> Classes</a>
+				<a href="index.php?page=appointments" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-book" aria-hidden="true"></i></span> Appointments</a>
+				<a href="index.php?page=orders" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-book" aria-hidden="true"></i></span> Orders</a>
+				<a href="index.php?page=classes_booking" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-book" aria-hidden="true"></i></span> Classes Booking</a>
+				<a href="index.php?page=membership_buying" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-book" aria-hidden="true"></i></span> Memberhsip Buying</a>
+	
 			<?php endif; ?>
 		</div>
 
