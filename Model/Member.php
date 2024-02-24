@@ -144,7 +144,7 @@ class Member
             // login sucess so store the member's username in
             // the session
             session_start();
-            $_SESSION["username"] = $memberRecord[0]["username"];
+            $_SESSION["id"] = $memberRecord[0]["id"];
             session_write_close();
             $url = "./index.php";
             header("Location: $url");

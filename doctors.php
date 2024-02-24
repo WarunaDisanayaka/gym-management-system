@@ -86,7 +86,7 @@
                                         <h3 class="card-title text-color"><?php echo $row['name']; ?></h3>
                                         <p class="mb-5"><?php echo $row['description']; ?></p>
                                         <div class="text-right">
-                                            <button class="btn btn-primary">Book an Appointment</button>
+                                        <a class="btn btn-primary" href="appointment.php?doctor=<?php echo urlencode($row['name']); ?>">Book an Appointment</a>
                                         </div>
                                     </div>
                                 </div>
