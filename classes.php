@@ -94,7 +94,7 @@
                            <div class="card-body mt-2">
                               <!-- Assuming you have a 'description' column in your 'classes' table -->
                               <p class="text-white"><?php echo $row['description']; ?></p>
-                              <a href="#" class="btn btn-solid-border text-white">Book Now</a>
+                              <a href="classesbooking.php?class_id=<?php echo $row['id']; ?>&class_name=<?php echo urlencode($row['name']); ?>&time_range=<?php echo urlencode($row['time_range']); ?>" class="btn btn-solid-border text-white">Book Now</a>
                            </div>
                         </div>
                      </div>
