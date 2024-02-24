@@ -72,7 +72,7 @@
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
 									<td class="">
-										<p>Class Name: <b><?php echo $row['class_name'] ?></b></p>
+										<p>Class Name: <b><?php echo $row['name'] ?></b></p>
 										<p>Description: <small><b><?php echo $row['description'] ?></b></small></p>
 										
 									</td>
@@ -80,7 +80,7 @@
 										<b><?php echo $row['time_range'] ?></b>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_class" type="button" data-id="<?php echo $row['id'] ?>" data-class_name="<?php echo $row['class_name'] ?>" data-description="<?php echo $row['description'] ?>" data-time_range="<?php echo $row['time_range'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-primary edit_class" type="button" data-id="<?php echo $row['id'] ?>" data-class_name="<?php echo $row['name'] ?>" data-description="<?php echo $row['description'] ?>" data-time_range="<?php echo $row['time_range'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_class" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>

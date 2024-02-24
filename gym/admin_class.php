@@ -286,6 +286,23 @@ Class Action {
 		}
 	}
 	
+	function save_class(){
+		extract($_POST);
+		$data = " name = '$class_name' ";
+		$data .= ", description = '$description' ";
+		$data .= ", time_range = '$time_range' ";
+	
+		if(empty($id)){
+			$save = $this->db->query("INSERT INTO classes SET $data");
+		} else {
+			$save = $this->db->query("UPDATE classes SET $data WHERE id = $id");
+		}
+	
+		if($save){
+			return 1;
+		}
+	}
+	
 
 	function delete_package(){
 		extract($_POST);
