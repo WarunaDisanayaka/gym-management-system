@@ -258,17 +258,34 @@ Class Action {
 
 	function save_product(){
 		extract($_POST);
-		$data = " product = '$package' ";
+		$data = " product = '$product' ";
 		$data .= ", description = '$description' ";
 		$data .= ", amount = '$amount' ";
-			if(empty($id)){
-				$save = $this->db->query("INSERT INTO products set $data");
-			}else{
-				$save = $this->db->query("UPDATE products set $data where id = $id");
-			}
-		if($save)
+	
+		// Check if image file is uploaded
+		if(isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK){
+			$image_name = $_FILES['image']['name'];
+			$image_tmp = $_FILES['image']['tmp_name'];
+			$upload_path = 'uploads/'; // Change this to your desired upload directory
+	
+			// Move the uploaded image to the specified directory
+			move_uploaded_file($image_tmp, $upload_path . $image_name);
+	
+			// Append image path to the data
+			$data .= ", image_path = '$upload_path$image_name' ";
+		}
+	
+		if(empty($id)){
+			$save = $this->db->query("INSERT INTO products SET $data");
+		} else {
+			$save = $this->db->query("UPDATE products SET $data WHERE id = $id");
+		}
+	
+		if($save){
 			return 1;
+		}
 	}
+	
 
 	function delete_package(){
 		extract($_POST);
@@ -277,6 +294,15 @@ Class Action {
 			return 1;
 		}
 	}
+
+	function delete_product(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM products where id = ".$id);
+		if($delete){
+			return 1;
+		}
+	}
+
 	function save_trainer(){
 		extract($_POST);
 		$data = " name = '$name' ";

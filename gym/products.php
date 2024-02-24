@@ -21,6 +21,10 @@
 								<label class="control-label">Description</label>
 								<textarea class="form-control" cols="30" rows='3' name="description"></textarea>
 							</div>
+                            <div class="form-group">
+                                 <label class="control-label">Product Image</label>
+                                 <input type="file" class="form-control-file" name="image" accept="image/*">
+                            </div>
 							<div class="form-group">
 								<label class="control-label">Amount</label>
 								<input type="number" class="form-control text-right" step="any" name="amount">
@@ -81,7 +85,7 @@
 									</td>
 									<td class="text-center">
 										<button class="btn btn-sm btn-primary edit_package" type="button" data-id="<?php echo $row['id'] ?>" data-package="<?php echo $row['product'] ?>" data-description="<?php echo $row['description'] ?>" data-amount="<?php echo $row['amount'] ?>" >Edit</button>
-										<button class="btn btn-sm btn-danger delete_package" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+										<button class="btn btn-sm btn-danger delete_product" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>
 								<?php endwhile; ?>
@@ -145,13 +149,13 @@
 		cat.find("[name='amount']").val($(this).attr('data-amount'))
 		end_load()
 	})
-	$('.delete_package').click(function(){
-		_conf("Are you sure to delete this package?","delete_package",[$(this).attr('data-id')])
+	$('.delete_product').click(function(){
+		_conf("Are you sure to delete this package?","delete_product",[$(this).attr('data-id')])
 	})
-	function delete_package($id){
+	function delete_product($id){
 		start_load()
 		$.ajax({
-			url:'ajax.php?action=delete_package',
+			url:'ajax.php?action=delete_product',
 			method:'POST',
 			data:{id:$id},
 			success:function(resp){
