@@ -26,6 +26,8 @@
 				<li class="nav-item"><a class="nav-link" href="pricing.php">Memebership</a></li>
 				<li class="nav-item"><a class="nav-link" href="doctors.php">Doctors</a></li>
 				<li class="nav-item"><a class="nav-link" href="products.php">Equipments</a></li>
+				<li class="nav-item"><a class="nav-link" href="classes.php">Classes</a></li>
+
 
 				<li class="nav-item dropdown">
 					
